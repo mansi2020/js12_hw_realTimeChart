@@ -1,8 +1,6 @@
 const ctx = document.getElementById("myChart");
 
 let chart;
-
-// Initial data
 const initialData = {
   labels: [],
   datasets: [
@@ -16,7 +14,6 @@ const initialData = {
   ],
 };
 
-// Chart configuration
 const chartConfig = {
   type: "line",
   data: initialData,
@@ -41,17 +38,13 @@ const chartConfig = {
     animation: false,
   },
 };
-
-// Initialize the chart
 chart = new Chart(ctx, chartConfig);
 
-// Function to add random data
 function addData() {
-  const newData = Math.random() * 100; // Generate random data
+  const newData = Math.random() * 100;
   chart.data.labels.push(chart.data.labels.length);
   chart.data.datasets[0].data.push(newData);
-  chart.update(); // Update the chart
+  chart.update();
 }
 
-// Add data at regular intervals (e.g., every 1 second)
 setInterval(addData, 1000);
