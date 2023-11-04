@@ -48,3 +48,15 @@ function addData() {
 }
 
 setInterval(addData, 1000);
+
+
+//todo animation from anime.js
+
+
+
+//animation of div container which have chart
+var container = document.querySelector('div');
+anime({
+    targets: container,
+    translateX:["-3000px",0],
+});
